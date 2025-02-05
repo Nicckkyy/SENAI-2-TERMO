@@ -1,10 +1,12 @@
 import React, {useState} from "react"
 import './styles.css'
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 export default function Login(){
     const [user, setUser] = useState('')
     const [password, setPassword] = useState('')
+    const navigate = useNavigate()
 
     // console.log("Usuário: ", user)
     // console.log("Senha: ", password)
@@ -18,10 +20,11 @@ export default function Login(){
                     password: password
                 }
             )
-            console.log("Token Login: ", response)
-
+            console.log("Token Login: ", response.data.access)
+            localStorage.setItem('token', response.data.access)
+            navigate('/home')
         } catch (error) {
-            
+            console.error(error)
         }
     }
 
