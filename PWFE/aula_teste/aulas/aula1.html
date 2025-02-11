@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1 - Front</title>
+</head>
+<body>
+    <script>
+        // Alert - chamamos a atenção do usuário onde o obrigamos a clicar em "ok"
+        //window.alert("Hello word, i'm breaking a curse");
+        //alert("Bien Venidos as Aulas de Javascript!")
+
+        // Prompet - similar a um imput do python
+        // temos tres tipos de variaveis (var, let, const)
+            //const: algo fixo, ou seja imutaveis, ou até mesmo que irão sofre as minimas mudanças durante o percurso
+            //let: leitura e de valores variaveis que usamos como armazenamneto de dados por meio de um "escopo"
+            //var: primeiro meio de declarar variaveis em Js, não sendo uma boa pratica seu uso, porém caso esteja em uso não o modificamos para
+            //algo mais recente e atualizado (encontramos mais em sistemas legados)
+        //let mat = prompt("We are testing the comenders");
+
+        //comfirm - exibindo uma mensagem onde aparece os botões  "OK" e "CANCEL"
+        //window.confirm("Do you want to confirm the understand of this class");
+        //document.write(`So, you are like this class today, about ${mat}`)
+
+        //exemplo pratico
+        let nota1, nota2, nota3, resultado
+
+        nota1 = Number(prompt("digite numero "))
+        nota2 = Number(prompt("digite numero "))
+        nota3 = Number(prompt("digite numero "))
+
+        resultado = (nota1 + nota2 + nota3)/3
+
+        //condicional
+        if(resultado >= 5){
+            document.write(`Você foi aprovado, parabens!! Sua média foi de ${resultado}`)
+        }else{
+            document.write(`boa sorte na proxima, você foi reprovado!! Sua média foi de ${resultado}`)
+        }
+
+
+    </script>
+
+</body>
+</html>
