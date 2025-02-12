@@ -4,7 +4,6 @@
   padding: 2rem;
   text-align: center;
 }
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -17,7 +16,6 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -26,39 +24,38 @@
     transform: rotate(360deg);
   }
 }
-
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
-
 .card {
   padding: 2em;
 }
-
 .read-the-docs {
   color: #888;
 }
 
+
 .container{
-  width: 500px;
-  height: 450px;
-  background-color: rgb(84, 133, 134);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 40px;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
 }
-
 .caixa{
-  width: 350px;
-  height: 40px;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  background-color: rgb(247, 247, 247);
-  margin-top: 25px;
-  padding: 5px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #b7b7b7;
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    margin-top: 20px;
+    padding: 5px;
 }
+.container button{
+  margin-top: 30px;
 
+}

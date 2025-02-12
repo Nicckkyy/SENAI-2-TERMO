@@ -28,14 +28,11 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color:#174d4d ;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color:rgb(255, 255, 255);
-  margin-top: -10px;
 }
 
 button {
@@ -48,7 +45,6 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin-top: 25px;
 }
 button:hover {
   border-color: #646cff;

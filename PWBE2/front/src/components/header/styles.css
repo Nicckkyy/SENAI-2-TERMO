@@ -1,0 +1,27 @@
+.container_header{
+    background-color: rgba(21, 76, 53, 0.951);
+    width: 900px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 80px;
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow:  5px 0px 15px rgb(110, 183, 149);
+}
+
+.nav{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    width: 300px;
+    height: 40px;
+    justify-content: space-between;
+    align-items: end;
+}
