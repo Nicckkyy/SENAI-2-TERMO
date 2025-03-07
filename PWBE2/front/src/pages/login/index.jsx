@@ -29,7 +29,6 @@ export default function Login() {
 
     return (
         <div className="container_login">
-            <section className="campos">
                 <LuUserRound className="icon" />
                 <input
                     placeholder="User"
@@ -48,7 +47,6 @@ export default function Login() {
                 <button className="btn" onClick={logar}>
                     Enter
                 </button>
-            </section>
         </div>
     )
 }

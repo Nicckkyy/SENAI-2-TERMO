@@ -1,32 +1,26 @@
 .container_footer {
-    background-color: rgba(21, 76, 53, 0.951);
-    width: 900px;
-    height: 100px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    box-shadow: 0 5px 15px rgb(110, 183, 149);
     border-radius: 5px;
+    position: fixed; 
+    bottom: 0;
+    width: 100vw;
+    height: 90px;
+    background-color: #000000;
+    color: white;
+    text-align: center;
     padding: 20px;
-    flex-direction: column;
-}
+    font-size: 10px;
+    box-shadow: 0 5px 15px rgba(3, 1, 90, 0.3);
+    margin-top: 150px;
+  }
+
  
   .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 700px;
     max-width: 900px;
     margin: auto;
-    font-size: 13px;
-
   }
   
   .school-info {

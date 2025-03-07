@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css"
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
-import Login from "./pages/login";
-import Home from "./pages/home"
+import Login from "./components/login"
+import Home from "./components/home"
 
 
 const browserRouter = createBrowserRouter(createRoutesFromElements(
@@ -11,13 +11,10 @@ const browserRouter = createBrowserRouter(createRoutesFromElements(
     <Route path='/login' element={ <Login /> } />
     <Route path='/home' element={ <Home /> } />
   </Route>
-
 ))
 
 export default function App() {
   return (
-
     <RouterProvider router={browserRouter} />
-
   );
 }
