@@ -128,7 +128,7 @@ export default function Home() {
                                 <tr key={professor.id} className="campos">
                                     <td className="icons">
                                         <div className="col1">
-                                            <FaEdit className="edit" onClick={() => atualizar (professorSelecionado)} />
+                                            <FaEdit className="edit" onClick={() => atualizar (professorSelecionadoimpo)} />
                                         </div>
                                         <div className="col2">
                                             <FaTrash className="delete" onClick={() => apagar(professor.id)} />
