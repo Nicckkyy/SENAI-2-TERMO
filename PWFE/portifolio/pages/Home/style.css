@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+/* geral do header */
+.header{
+    border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 55px;
+    align-items: center;
+}
+
+/* espaço logo */
+.logo{
+    border: 5px solid yellow;
+}
+
+/* espaço pesquisa */
+.search-bar{
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 25px;
+    width: 35%;
+    border-radius: 15px;
+}
+
+/* espaço usuário */
+.user{
+  border: 5px solid green;
+}
+
+
+/* menu */
+.body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu{
+    border: 2px solid black;
+    width: 20%;
+    height: 30%;
+}
+
+.display{
+    border: 2px solid pink;
+}
