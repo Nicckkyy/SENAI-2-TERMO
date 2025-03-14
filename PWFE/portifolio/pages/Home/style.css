@@ -5,39 +5,78 @@
     list-style: none;
 }
 
-/* geral do header */
+/* --------------------------------------------------------------------------------- geral do header ------------------------------------------------------------------------------ */
 .header{
     border: 2px solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 55px;
+    height: 50px;
     align-items: center;
 }
 
 /* espaço logo */
 .logo{
-    border: 5px solid yellow;
+    img{
+        height: 120px;
+        width: 120px;
+    }
 }
 
 /* espaço pesquisa */
 .search-bar{
-    border: 2px solid blue;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 25px;
-    width: 35%;
-    border-radius: 15px;
+    width: 550px;
+    border-radius: 30px;
+    justify-content: space-between;
+    input{
+        height: 40px;
+        width: 530%;
+        border-radius: 30px;
+        border: 1px solid darkgray; 
+        padding: 10px;
+    }
+
+    .microfone{
+        /* border: 2px solid ; */
+        align-items: center;
+        width: 200px;
+        border-radius: 80px;
+        i{
+            height: 35px;
+            width: 35px;
+            justify-content: center;
+            align-items: center;
+            display: flex;   
+        }
+    }
 }
+
+
 
 /* espaço usuário */
-.user{
-  border: 5px solid green;
+
+.container-user{
+    justify-content: space-between;
+    border: 5px solid green;
+    width: 250px;
+}
+
+.create{
+    border: 2px solid;
+    width: 20px;
+    height: 20px;
+}
+
+.photo-user{
+    border: 2px solid ;
+    width: 20px;
 }
 
 
-/* menu */
+/*  --------------------------------------------------------------------------------- menu  --------------------------------------------------------------------------------- */
 .body{
     display: flex;
     flex-direction: row;
