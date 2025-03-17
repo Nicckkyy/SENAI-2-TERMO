@@ -1,0 +1,115 @@
+CREATE DATABASE Treinamentos;
+USE Treinamentos;
+-- drop database Treinamentos
+
+/* ------- TABELAS -------- */
+CREATE TABLE Instrutores(
+	id_instrutor INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(200),
+    email TEXT,
+    telefone VARCHAR(200) 
+);
+
+CREATE TABLE Turmas(
+	id_turma INT AUTO_INCREMENT PRIMARY KEY,
+    nome_turma VARCHAR(200),
+    qntd_turmas INT,
+    qntd_alunos INT,
+    responsavel VARCHAR(200)
+);
+
+CREATE TABLE Atividades(
+	id_atividade INT AUTO_INCREMENT PRIMARY KEY,
+    data_entrega DATE,
+    turmas_realizando INT,
+    entregadas INT
+);
+
+CREATE TABLE Disciplinas(
+	id_disciplina INT AUTO_INCREMENT PRIMARY KEY,
+    duracao VARCHAR(200),
+    atividades_realizadas INT
+);
+
+/* ------- RELACIONAMENTOS -------- */
+CREATE TABLE Passar_Aula(
+	id_passar_aula INT AUTO_INCREMENT PRIMARY KEY,
+    id_instrutor INT NOT NULL,
+    id_disciplina INT NOT NULL,
+    FOREIGN KEY (id_instrutor) REFERENCES Instrutores(id_instrutor),
+	FOREIGN KEY (id_disciplina) REFERENCES Disciplinas(id_disciplina)
+);
+
+CREATE TABLE Responsavel(
+	id_responsavel_da_turma INT AUTO_INCREMENT PRIMARY KEY,
+    id_instrutor INT NOT NULL,
+    id_turma INT NOT NULL,
+    FOREIGN KEY (id_instrutor) REFERENCES Instrutores(id_instrutor),
+	FOREIGN KEY (id_turma) REFERENCES Turmas(id_turma)
+);
+
+CREATE TABLE Realizacao(
+	id_realizacao_atividade INT AUTO_INCREMENT PRIMARY KEY,
+    id_atividade INT NOT NULL,
+    id_turma INT NOT NULL,
+    FOREIGN KEY (id_atividade) REFERENCES Atividades(id_atividade),
+	FOREIGN KEY (id_turma) REFERENCES Turmas(id_turma)
+);
+
+/* ------- INSERÇÃO DE DADOS DAS TABELAS -------- */
+/* --------------- TABELAS CRIADAS --------------------*/
+INSERT INTO Instrutores (nome, email, telefone) VALUES
+('Marcia Scanacapra', 'Marci@scanacapra.com', '19348167521'),
+('Fernanda Militao', 'Nand@fernandamilitao.com', '1915482394'),
+('Lindomar Batistao', 'Lindomiro@batistao.com', '19345567812'),
+('Israel Gomes', 'Gomes@israelsilva.com', '19647822466'),
+('Michael Modesto', 'Chechel@modesto.com', '19224867153'),
+('Mariany Lima', 'Mari@marianylima.com', '19574886342');
+
+INSERT INTO Turmas (nome_turma, qntd_turmas, qntd_alunos, responsavel) VALUES
+('Turma_1', 8, 16, 'Lucas'),
+('Turma_2', 8, 16, 'Lucas'),
+('Turma_3', 8, 16, 'Lucas'),
+('Turma_4', 8, 16, 'Lucas'),
+('Turma_5', 8, 16, 'Lucas'),
+('Turma_6', 8, 16, 'Lucas');
+
+INSERT INTO Atividades (data_entrega, turmas_realizando, entregadas) VALUES 
+('2025-03-17' ,3 ,15),
+('2025-03-25' ,5 ,6),
+('2025-03-19' ,1 ,10),
+('2025-04-30' ,3 ,1),
+('2025-03-04' ,6 ,16),
+('2025-04-27' ,3 ,7);
+
+INSERT INTO Disciplinas (duracao, atividades_realizadas) VALUES
+('500', 5),
+('6000', 15),
+('2000', 10),
+('1000', 5),
+('400', 2),
+('3000', 4);
+
+/* --------------- TABELAS RELACIONAMENTOS --------------------*/
+INSERT INTO Passar_Aula (id_instrutor, id_disciplina) VALUES
+(1, 5),
+(2, 3),
+(3, 4),
+(4, 1),
+(5, 1),
+(6, 2);
+
+INSERT INTO Responsavel (id_instrutor, id_turma) VALUES
+(1, 2),
+(2, 1),
+(3, 6),
+(4, 3),
+(5, 3),
+(6, 5);
+
+INSERT INTO Realizacao (id_atividade, id_turma) VALUES
+(1, 1),
+(2, 3),
+(3, 2),
+(4, 4),
+(5, 4);

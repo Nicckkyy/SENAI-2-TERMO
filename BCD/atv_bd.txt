@@ -4,45 +4,45 @@ USE Biblioteca;
 
 CREATE TABLE Livro(
 	id_livro INT AUTO_INCREMENT PRIMARY KEY,
-    titulo_do_livro VARCHAR(200),
-    isbn CHAR(13) NOT NULL,
-    descricao TEXT,
-    categoria VARCHAR(200)
+    	titulo_do_livro VARCHAR(200),
+    	isbn CHAR(13) NOT NULL,
+    	descricao TEXT,
+    	categoria VARCHAR(200)
 );
 
 CREATE TABLE Autor(
 	id_autor INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255),
-    data_de_nascimento DATE,
-    biografia TEXT
+    	nome VARCHAR(255),
+    	data_de_nascimento DATE,
+    	biografia TEXT
 );
 
 CREATE TABLE Livro_has_Autor(
 	id_livro_has_autor INT AUTO_INCREMENT PRIMARY KEY,
-    id_livro INT NOT NULL,
-    id_autor INT NOT NULL,
-    FOREIGN KEY (id_livro) REFERENCES Livro(id_livro),
-    FOREIGN KEY (id_autor) REFERENCES Autor(id_autor)
+    	id_livro INT NOT NULL,
+    	id_autor INT NOT NULL,
+    	FOREIGN KEY (id_livro) REFERENCES Livro(id_livro),
+    	FOREIGN KEY (id_autor) REFERENCES Autor(id_autor)
 );
 
 CREATE TABLE Usuario(
 	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255),
-    endereco_email VARCHAR(255),
-    data_de_registro DATE
+    	nome VARCHAR(255),
+    	endereco_email VARCHAR(255),
+    	data_de_registro DATE
 );
 
 CREATE TABLE Emprestimo(
 	id_emprestimo INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
+    	id_usuario INT NOT NULL,
 	id_livro INT NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+    	FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
 	FOREIGN KEY (id_livro) REFERENCES Livro(id_livro)
 );
 
 CREATE TABLE Biblioteca(
 	id_biblioteca INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255),
+    	nome VARCHAR(255),
 	endereco_email VARCHAR(255),
 	endereco VARCHAR(255),
 	cnpj VARCHAR(255)
@@ -52,6 +52,6 @@ CREATE TABLE Membro(
 	id_menbro INT AUTO_INCREMENT PRIMARY KEY,
 	id_usuario INT NOT NULL,
 	id_biblioteca INT NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
-    FOREIGN KEY (id_biblioteca) REFERENCES Biblioteca(id_biblioteca)
+    	FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+    	FOREIGN KEY (id_biblioteca) REFERENCES Biblioteca(id_biblioteca)
 );
