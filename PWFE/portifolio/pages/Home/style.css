@@ -7,15 +7,17 @@
 
 /* --------------------------------------------------------------------------------- geral do header ------------------------------------------------------------------------------ */
 .header{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 50px;
     align-items: center;
+    padding: 30px;
 }
 
-/* espaço logo */
+
+/* --------------- espaço logo --------------- */
 .logo{
     img{
         height: 120px;
@@ -23,71 +25,150 @@
     }
 }
 
-/* espaço pesquisa */
+
+/* --------------- espaço pesquisa --------------- */
 .search-bar{
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: 550px;
-    border-radius: 30px;
+    border-radius: 25px;
     justify-content: space-between;
+    padding: 5px 10px;
     input{
         height: 40px;
         width: 530%;
-        border-radius: 30px;
+        border-radius: 20px;
         border: 1px solid darkgray; 
         padding: 10px;
+        font-size: 16px;
     }
 
     .microfone{
         /* border: 2px solid ; */
         align-items: center;
         width: 200px;
-        border-radius: 80px;
         i{
             height: 35px;
             width: 35px;
             justify-content: center;
             align-items: center;
-            display: flex;   
+            display: flex;  
+            
         }
     }
 }
 
+.mic-btn {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+}
 
 
-/* espaço usuário */
+/* --------------- espaço usuário --------------- */
 
 .container-user{
     justify-content: space-between;
-    border: 5px solid green;
-    width: 250px;
+    /* border: 2px solid green; */
+    width: 260px;
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    align-items: center;
 }
 
-.create{
-    border: 2px solid;
-    width: 20px;
-    height: 20px;
+.create-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 9px 20px;
+    background-color: #e4e4e4;
+    border: none;
+    border-radius: 20px; 
+    font-size: 16px;
+    cursor: pointer;
 }
 
-.photo-user{
-    border: 2px solid ;
-    width: 20px;
+.create-btn .plus-icon {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.i {
+    width: 50px;
+    height: 50px;
+}
+
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; 
+    object-fit: cover;
+    padding: 5px;
 }
 
 
-/*  --------------------------------------------------------------------------------- menu  --------------------------------------------------------------------------------- */
+
+/*  --------------------------------------------------------------------------------- navegação  --------------------------------------------------------------------------------- */
+/* --------------- geral --------------- */
 .body{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-}
-.menu{
-    border: 2px solid black;
-    width: 20%;
-    height: 30%;
+    padding: 5px;
+
 }
 
+
+
+/* --------------- menu --------------- */
+.menu{
+    /* border: 2px solid black; */
+    width: 50%;
+    height: 50%;
+    width: 250px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    p{
+        margin: 10px;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+li:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* --------------- exibição cards de aulas --------------- */
 .display{
     border: 2px solid pink;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    column-gap: 15px;
+    img{
+        width: 150px;
+        height: 150px;
+    }
 }

@@ -10,10 +10,10 @@
 </head>
 <body>
     
-    <!-- começo -->
+    <!----------------------------------------------- começo ----------------------------------------------->
     <main>
 
-        <!-- header - topo -->
+        <!----------------------------------------------header - topo ---------------------------------------------->
         <section class="header">
             <div class="logo">
                 <img src="../../pictures/Youtube_logo.webp" alt="">
@@ -22,13 +22,18 @@
             <div class="search-bar">
                 <input type="search" placeholder="Pesquisar">
                 <div class="microfone">
-                    <i class="bi bi-mic-fill"></i>
+                    <button class="mic-btn">
+                        <i class="bi bi-mic-fill"></i>
+                    </button>
                 </div>
             </div>
 
+
             <section class="container-user">
                 <div class="create">
-                    <button class="criar"></button>
+                    <button class="create-btn">
+                        <span class="plus-icon">+</span> Criar
+                    </button>
                 </div>
 
                 <div class="notification">
@@ -36,47 +41,87 @@
                 </div>
         
                 <div class="photo-user">
-                    <img src="" alt="">
+                    <img src="../../pictures/profile.JPG" alt="" class="profile-pic">
                 </div> 
-            </section>           
+            </section>  
         </section>
         
-        <!-- menu - navegação -->
+        <!---------------------------------------------- menu - navegação ---------------------------------------------->
         <section class="body">   
             <section class="menu">
                 <div class="container-aulas">
-                    <div class="aulas">
-                        <p>icone</p>
-                        <p>nome da aula</p>
-                    </div>
+                     <ul>
+                        <li class="nav">
+                            <i class="bi bi-house-door-fill"></i> Início
+                        </li>
+                        <li>
+                            <i class="bi bi-music-note-list"></i> Playlists
+                        </li>
+
+                    </ul>
+                    
+                    <hr> 
                 </div>
 
-                <div class="container-tecnologias">
-                    <div class="tecnologias">
-                        <p>icone</p>
-                        <p>nome da tecnologia</p>
+
+                <div class="container-conteudos">
+                    <div class="aulas">
+                        <p class="section-title">Matérias </p>
+                        <ul>
+                            <li>
+                                <i class="bi bi-database-fill-add"></i> Banco de dados
+                            </li>
+                            <li>
+                                <i class="bi bi-file-earmark-code-fill"></i> Backend 2
+                            </li>
+                            <li>
+                                <i class="bi bi-brush-fill"></i> LIMA 2
+                            </li>
+                            <li>
+                                <i class="bi bi-globe2"></i> Frontend 
+                            </li>
+                            <li>
+                                <i class="bi bi-journal-bookmark-fill"></i> Projetos
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </section>
 
+ <!---------------------------------------------- card exibição ---------------------------------------------->
             <section class="display">
                 <div class="classroom-display">
                     <div class="picture-classroom">
-                        <img src="" alt="">
+                        <img src="../../pictures/profile.JPG" alt="">
                     </div>
 
+                    
                     <div class="info-classroom">
                         <div class="picture-tecnologia">
-                            <img src="" alt="">
+                            <img src="../../pictures/profile.JPG" alt="">
                         </div>
-                        <p>nome da aula</p>
+                        <p>teste</p>
+                    </div>
+                </div>
+
+                <div class="classroom-display">
+                    <div class="picture-classroom">
+                        <img src="../../pictures/profile.JPG" alt="">
+                    </div>
+
+                    
+                    <div class="info-classroom">
+                        <div class="picture-tecnologia">
+                            <img src="../../pictures/profile.JPG" alt="">
+                        </div>
+                        <p>teste</p>
                     </div>
                 </div>
             </section>
         </section>
     </main>
 
-    <!-- fim -->
+    <!---------------------------------------------- fim ---------------------------------------------->
     <footer>
 
     </footer>
