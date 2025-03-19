@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             name='Professor',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('n1', models.CharField(max_length=255)),
+                ('ni', models.CharField(max_length=255)),
                 ('nome', models.CharField(max_length=255)),
                 ('email', models.EmailField(max_length=255)),
                 ('tel', models.CharField(max_length=255)),

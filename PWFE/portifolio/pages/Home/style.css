@@ -167,8 +167,12 @@ li:hover {
     flex-direction: row;
     padding: 5px;
     column-gap: 15px;
-    img{
-        width: 150px;
-        height: 150px;
+    width: 500%;
+    
+
+    .classroom-display{
+        border: 2px solid;
+        width: 30%;
+        height: 45%;
     }
 }

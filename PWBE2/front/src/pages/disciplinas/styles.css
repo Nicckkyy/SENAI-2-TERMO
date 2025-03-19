@@ -1,4 +1,4 @@
-.container_home {
+.container_disciplina {
     background-color: #62466B;
     max-width: 1000px;
     height: 600px;
@@ -36,28 +36,28 @@
 }
 .col3{
     /* background-color: aqua; */
-    width: 35px;
+    width: 80px;
 }
 .col4{
     /* background-color: rgb(209, 197, 37); */
-    width: 60px;
+    width: 150px;
 }
 .col5{
     /* background-color: aqua; */
-    width: 200px;
+    width: 150px;
 }
 .col6{
     /* background-color: rgb(209, 197, 37); */
-    width: 200px;
+    width: 150px;
 }
 .col7{
     /* background-color: aqua; */
-    width: 150px;
+    width: 250px;
 }
 
 .col8{
     /* background-color: rgb(209, 197, 37); */
-    width: 25px;
+    width: 50px;
 }
 
 .footer_table{

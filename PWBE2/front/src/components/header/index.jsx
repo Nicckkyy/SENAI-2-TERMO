@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import './styles.css'
 
 export default function Header() {
     return (
         <div className="container_header">
-            <section className='body_header' >
+            <section className="body_header">
                 <div className="title">
                     <h1>Header</h1>
                 </div>
