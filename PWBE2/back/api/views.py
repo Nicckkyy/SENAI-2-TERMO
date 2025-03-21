@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Professor, Disciplinas
-from .serializer import ProfessorSerializer, DisciplinasSerializer
+from .models import Professor, Disciplinas, Turma, Curso, Ambiente
+from .serializer import ProfessorSerializer, DisciplinasSerializer, TurmaSerializer, CursoSerializer, AmbienteSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
@@ -22,7 +22,7 @@ def listar_professores(request):
         else:
             return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
             
-
+# Professores
 class ProfessoresView(ListCreateAPIView):
     queryset = Professor.objects.all()
     serializer_class = ProfessorSerializer
@@ -33,6 +33,7 @@ class ProfessoresDetailView(RetrieveUpdateDestroyAPIView):
     serializer_class = ProfessorSerializer
     permission_classes = [IsAuthenticated]
 
+# Disciplinas
 class DiciplinaView(ListCreateAPIView):
     queryset = Disciplinas.objects.all()
     serializer_class = DisciplinasSerializer
@@ -42,3 +43,36 @@ class DisciplinaDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Disciplinas.objects.all()
     serializer_class = DisciplinasSerializer
     permission_classes = [IsAuthenticated]  
+
+# Turma
+class TurmaView(ListCreateAPIView):
+    queryset = Turma.objects.all()
+    serializer_class = TurmaSerializer
+    permission_classes = [IsAuthenticated]
+
+class TurmaDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = Turma.objects.all()
+    serializer_class = TurmaSerializer
+    permission_classes = [IsAuthenticated]
+
+# Curso
+class CursoView(ListCreateAPIView):
+    queryset = Curso.objects.all()
+    serializer_class = CursoSerializer
+    permission_classes = [IsAuthenticated]
+
+class CursoDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = Curso.objects.all()
+    serializer_class = CursoSerializer
+    permission_classes = [IsAuthenticated]
+
+# Ambiente
+class AmbienteView(ListCreateAPIView):
+    queryset = Ambiente.objects.all()
+    serializer_class = AmbienteSerializer
+    permission_classes = [IsAuthenticated]
+
+class AmbienteDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = Ambiente.objects.all()
+    serializer_class = AmbienteSerializer
+    permission_classes = [IsAuthenticated]
