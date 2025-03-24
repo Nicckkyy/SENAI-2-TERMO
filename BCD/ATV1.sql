@@ -1,3 +1,97 @@
+CREATE DATABASE Biblioteca;
+USE Biblioteca;
+ -- drop database Biblioteca
+
+/* ------- TABELAS -------- */
+CREATE TABLE Livro(
+	id_livro INT AUTO_INCREMENT PRIMARY KEY,
+	titulo_do_livro VARCHAR(200),
+	isbn CHAR(13) NOT NULL,
+	descricao TEXT,
+	categoria VARCHAR(200)
+);
+
+CREATE TABLE Autor(
+	id_autor INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(255),
+	data_de_nascimento DATE,
+	biografia TEXT
+);
+
+CREATE TABLE Usuario(
+	id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(255),
+	endereco_email VARCHAR(255),
+	data_de_registro DATE
+);
+
+CREATE TABLE Biblioteca(
+	id_biblioteca INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(255),
+	endereco_email VARCHAR(255),
+	endereco VARCHAR(255),
+	cnpj VARCHAR(255)
+);
+
+
+/* ------- RELACIONAMENTOS -------- */
+CREATE TABLE Livro_has_Autor(
+	id_livro_has_autor INT AUTO_INCREMENT PRIMARY KEY,
+	id_livro INT NOT NULL,
+	id_autor INT NOT NULL,
+	FOREIGN KEY (id_livro) REFERENCES Livro(id_livro),
+	FOREIGN KEY (id_autor) REFERENCES Autor(id_autor)
+);
+
+CREATE TABLE Emprestimo(
+	id_emprestimo INT AUTO_INCREMENT PRIMARY KEY,
+	id_usuario INT NOT NULL,
+	id_livro INT NOT NULL,
+	FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+	FOREIGN KEY (id_livro) REFERENCES Livro(id_livro)
+);
+
+
+CREATE TABLE Membro(
+	id_menbro INT AUTO_INCREMENT PRIMARY KEY,
+	id_usuario INT NOT NULL,
+	id_biblioteca INT NOT NULL,
+	FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+	FOREIGN KEY (id_biblioteca) REFERENCES Biblioteca(id_biblioteca)
+);
+
+/* ------- SELECT TABLE -------- */
+ALTER TABLE Livro
+ADD autor VARCHAR (15),
+ADD ano_publicacao DATE,
+ADD status_livro VARCHAR(35);
+
+SELECT * FROM Livro;
+
+
+-- SELECT *
+-- FROM Livro
+-- INNER JOIN Livro_has_Autor ON Livro.id_livro = Livro_has_Autor.id_livro
+-- INNER JOIN Autor ON Autor.id_autor = Livro_has_Autor.id_autor;
+
+SELECT *
+FROM Livro
+INNER JOIN Emprestimo ON Livro.id_livro = Emprestimo.id_livro
+INNER JOIN Usuario ON Usuario.id_usuario = Emprestimo.id_usuario;
+
+
+
+
+
+/* ------- INSERT TABLE -------- */
+-- INSERT INTO livro (titulo_do_livro, isbn, descricao, categoria, autor, ano_publicacao, status_livro) VALUES
+-- ('Python', 9783161484100, 'Um guia completo de Python, cobrindo desde o básico até conceitos avançados de programação.', 'tecnico', 'Eric Matthes',  2023-04-24, 'ativo');
+
+
+
+
+
+/* ------- INSERÇÃO DE DADOS DAS TABELAS -------- */
 INSERT INTO Livro (titulo_do_livro, isbn, descricao, categoria) VALUES
 ('O Iluminado', '9780307743657', 'Terror psicológico de Stephen King.', 'Terror'),
 ('It: A Coisa', '9781501142970', 'Obra de terror e suspense de Stephen King.', 'Terror'),
@@ -44,7 +138,7 @@ INSERT INTO Biblioteca (nome, endereco_email, endereco, cnpj) VALUES
 ('Biblioteca Nacional', 'contato@bibliotecanacional.com', 'Avenida das Letras, 321', '12.987.654/0001-99'),
 ('Biblioteca Municipal de São Paulo', 'contato@bibliotecamsaopaulo.com', 'Rua dos Livros, 789', '98.456.321/0001-88');
 
-INSERT INTO Menbro (id_usuario, id_biblioteca) VALUES
+INSERT INTO Membro (id_usuario, id_biblioteca) VALUES
 (1, 1), 
 (2, 2), 
 (3, 1); 
