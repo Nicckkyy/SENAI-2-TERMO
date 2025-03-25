@@ -127,41 +127,7 @@
 }
 
 
-
-/* --------------- menu --------------- */
-.menu{
-    /* border: 2px solid black; */
-    width: 50%;
-    height: 50%;
-    padding: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    p{
-        margin: 10px;
-    }
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 5px;
-}
-
-li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-}
-
-li:hover {
-    background-color: #f0f0f0;
-}
-
-
-/* --------------- exibição cards de aulas --------------- */
+/*  --------------------------------------------------------------------------------- exibição  --------------------------------------------------------------------------------- */
 .display{
     border: 2px solid pink;
     display: flex;
@@ -169,50 +135,32 @@ li:hover {
     padding: 5px;
     column-gap: 15px;
     width: 500%;
+    height: 750px;
+    padding: 15px;
     justify-content: center;
-    
-    
 
-    .classroom-display{
-        border: 2px solid;
-        width: 20%;
-        height: 56%;
+    .class-activity{
+        border: 2px solid red;
+        width: 1290px;
+        height: 95%;
         justify-content: center;
         align-items: center;
         margin-top: 15px;
         margin: 10px;
     }
 
-    .picture-classroom{
-        border: 2px solid green;
-        width: auto;
-        height: 65%;
-        padding: 5px;
-        margin: 2%;
-    }
+    .next-activity-contain{
+        border: 2px solid blue;
+        width: 402px;
+        height: 95%;
+        margin-top: 15px;
+        margin: 10px;
+        justify-content: center;
 
-    .info-classroom{
-        border: 2px solid rgb(255, 9, 9);
-        padding: 5px;
-        width: auto;
-        height: auto;
-        margin: 2%;
-        display: flex;
-
-        .picture-tecnologia{
-            width: 10%;
-            height: 30px;
-            border: 2px solid rgb(0, 255, 98);
-        }
-
-        .info-class{
-            width: 90%;
-            border: 2px solid rgb(0, 0, 0);
-            align-items: center;
-            display: flex;
-            .p{
-                font-family: Arial, Helvetica, sans-serif;
-            }
+        .picture-next-activity{
+            border: 2px solid green;
+            width: 169px;
+            height: 94px;
         }
 
     }
