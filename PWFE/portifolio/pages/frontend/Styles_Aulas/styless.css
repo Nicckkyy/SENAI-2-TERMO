@@ -129,7 +129,7 @@
 
 /*  --------------------------------------------------------------------------------- exibição  --------------------------------------------------------------------------------- */
 .display{
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
     display: flex;
     flex-direction: row;
     padding: 5px;
@@ -141,8 +141,8 @@
 
     .class-activity{
         border: 2px solid red;
-        width: 1290px;
-        height: 95%;
+        width: 1270px;
+        height: 85%;
         justify-content: center;
         align-items: center;
         margin-top: 15px;
@@ -150,18 +150,73 @@
     }
 
     .next-activity-contain{
-        border: 2px solid blue;
+        /* border: 2px solid blue; */
         width: 402px;
-        height: 95%;
+        height: 114%;
         margin-top: 15px;
         margin: 10px;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto;
+        overflow-x: hidden; 
+        
 
-        /* .picture-next-activity{
+        .container-class{
+            border: 3px solid yellow;
+            margin: 4px;
+            display: flex;
+            flex-direction: row;
+            
+           
+        }
+
+        .picture-next-activity{
             border: 2px solid green;
             width: 169px;
             height: 94px;
-        } */
+            margin: 10px;
+        } 
+
+
+        .container-infos{
+            border: 2px solid greenyellow;
+            width: 169px;
+            height: 94px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+
+            .info-next-class{
+                border: 2px solid;
+                height: 50px;
+            }
+
+            .button-next{
+                border: 2px solid orange;
+                display: flex;
+                justify-content: end;
+
+                .next{
+                    
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    padding: 9px 20px;
+                    background-color: #e4e4e4;
+                    border: none;
+                    border-radius: 20px; 
+                    cursor: pointer;
+                    
+                }
+            }
+
+        }
 
     }
+    .next-activity-contain::-webkit-scrollbar {
+        display: none;
+      }
 }
