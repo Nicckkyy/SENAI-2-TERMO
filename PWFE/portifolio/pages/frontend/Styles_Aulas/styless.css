@@ -132,7 +132,6 @@
     /* border: 2px solid pink; */
     display: flex;
     flex-direction: row;
-    padding: 5px;
     column-gap: 15px;
     width: 500%;
     height: 750px;
@@ -150,7 +149,7 @@
     }
 
     .next-activity-contain{
-        /* border: 2px solid blue; */
+        border: 2px solid blue;
         width: 402px;
         height: 114%;
         margin-top: 15px;
