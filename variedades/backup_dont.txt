@@ -1,0 +1,117 @@
+-----COMANDOS CMD-----
+
+cd		#entra na pasta
+md		#cria uma pasta
+mv		#move uma pasta
+cp 		#copia uma pasta
+echo "Conteudo" > nome_do_arquivo.txt
+
+-----TUTORIAL-----
+
+Aperte windows + R 
+entre no cmd
+entre na pasta do seu projeto
+
+py -m venv env
+env\scripts\activate
+pip install -r requeriments.txt
+code .
+
+-----COMANDOS INSTALL DJANGO-----
+
+pip list		#lista os pacotes do python	
+pip freeze	#lista os pacotes do Python
+pip freeze > requirements.txt		#manda os pacote do python para um txt
+
+pip install djangorestframework	#instala o Rest Framework
+pip install django_restframework	#instala o Django
+pip install django-cors-headers	#regras de uso
+
+django-admin startproject loja .	#cria a pasta loja
+django -admin startapp api 		#cria a pasta api
+
+-----ESPECIFICAÇÕES PYTHON-----
+
+models            #Criamos as tabelas
+views       	  #Defiimos as classes e métodos
+urls           	  #Endpoints, links
+serializers	  #Converte em formato Json
+
+-----COMANDOS PYTHON-----
+
+py -m venv env	#cria o ambiente virtual
+env\scripts\activate	#ativa o ambiente virtual
+pip list		#lista os pacotes do python	
+pip freeze	#lista os pacotes do Python
+pip freeze > requirements.txt		#manda os pacote do python para um txt
+pip install djangorestframework	#instala o Rest Framework
+pip install django_restframework	#instala o Django
+pip install django-cors-headers	#regras de uso
+django-admin startproject loja .	#cria a pasta loja
+django -admin startapp api 		#cria a pasta api
+pip install -r requeriments.txt		#instala o pacotes requeridos de um txt
+code .						#abre o Visual Studio Code na pasta atual
+py manage.py makemigration		#cria a tabela
+py manage.py migrate			#aplica as mudanças feitas
+py manage.py runserver
+
+-----Aula Git e GitHub-----
+
+Controle de versão
+
+Versões
+3.13.36-alpha
+
+*3* - Comaptibilidade: funcionalidades incompatíveis com versões anteriores
+*13* - Novas funcionalidades
+*36 - Correção de bugs
+-alpha - Pré-lançada
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Git e GitHub
+
+GitHub
+
+Uma plataforma que guarda as versões do projeto em nuvem
+
+*eu: Para vcs personalizarem seu github - https://github.com/anuraghazra/github-readme-stats - criem um repositório com seu nome de usuário e depois criem um readme e colem o código do que vcs gostaram*
+
+Git
+
+Um software que salva a versão do projeto localmente para mandar para a nuvem de plataformas, como o GitHub, GitLab e etc...
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Git Comandos
+
+git config user.name	//Verifica o usuario que está no git
+git config user.name "Your_Users_Name"	//Muda o usuário do git
+git init	//Inicializa o processo de versionamento
+git config user.email	//Muda o e-mail do git
+git add .	//Adiciona todos os arquivos para enviar para o git
+git commit - m "conteudo_Mensagem"	//Manda os arquivos adicionados para o git local
+git remote add origin link_do_repositorio	//linka o git local com o repositório do GitHub
+git push -u origin master	//Envia os arquivos do Git local para o GitHub
+
+*eu: é bom antes de uparem no github mudarem o nome
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+API e-commerce
+
+-----MODELS-----
+from typing import Any
+from django.db import models
+
+class Produto(models.Model):
+    titulo = models.CharField(max_length=255)
+    preco = models.models.DecimalField(max_digits=10, decimal_places=2)
+    imgproduto = models.CharField(max_length=255)
+    catproduto = models.CharField(max_length=255)
+    clasproduto = models.CharField(max_length=255)
+    exibirhome = models.models.BooleanField(default="true")
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SO
