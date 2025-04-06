@@ -1,3 +1,4 @@
+/*-- esta pasta cuida da estyluzação geral das paginas de exibição somente dos exercicios, os temas ficam com seu arquivo .css proprio, já que ambas as telas possuem layouts diferentes --*/
 *{
     margin: 0;
     padding: 0;
@@ -167,6 +168,13 @@
             display: flex;
             flex-direction: row;
             
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                border-radius: 15px;
+            }
            
         }
 

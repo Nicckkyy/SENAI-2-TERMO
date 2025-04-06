@@ -171,10 +171,12 @@ li:hover {
     width: 500%;
     justify-content: center;
     
-    
+    .classroom-display:hover{
+        background-color: #dbdada;
+    }
 
     .classroom-display{
-        border: 2px solid;
+        /* border: 2px solid; */
         width: 20%;
         height: 56%;
         justify-content: center;
@@ -184,15 +186,24 @@ li:hover {
     }
 
     .picture-classroom{
-        border: 2px solid green;
+        /* border: 2px solid green; */
         width: auto;
         height: 65%;
-        padding: 5px;
+        padding: 5; 
         margin: 2%;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 15px;
+        }
     }
 
     .info-classroom{
-        border: 2px solid rgb(255, 9, 9);
+        /* border: 2px solid rgb(255, 9, 9); */
         padding: 5px;
         width: auto;
         height: auto;
@@ -202,12 +213,19 @@ li:hover {
         .picture-tecnologia{
             width: 10%;
             height: 30px;
-            border: 2px solid rgb(0, 255, 98);
+            /* border: 2px solid rgb(0, 255, 98); */
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
         }
 
         .info-class{
             width: 90%;
-            border: 2px solid rgb(0, 0, 0);
+            /* border: 2px solid rgb(0, 0, 0); */
             align-items: center;
             display: flex;
             .p{
