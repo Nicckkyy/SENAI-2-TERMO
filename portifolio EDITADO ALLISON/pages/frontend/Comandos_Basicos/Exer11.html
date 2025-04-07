@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Styles_Aulas/styless.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>Youtube</title>
+    <link rel="icon" href="../../../pictures/youtube_icon.png" />
+  </head>
+  <body>
+    <!----------------------------------------------- começo ----------------------------------------------->
+    <main>
+      <!----------------------------------------------header - topo ---------------------------------------------->
+      <section class="header">
+        <div class="logo">
+          <img src="../../../pictures/Youtube_logo.webp" alt="" />
+        </div>
+
+        <div class="search-bar">
+          <input type="search" placeholder="Pesquisar" />
+          <div class="microfone">
+            <button class="mic-btn">
+              <i class="bi bi-mic-fill"></i>
+            </button>
+          </div>
+        </div>
+
+        <section class="container-user">
+          <div class="create">
+            <button class="create-btn">
+              <span class="plus-icon">+</span> Criar
+            </button>
+          </div>
+
+          <div class="notification">
+            <i class="bi bi-bell"></i>
+          </div>
+
+          <div class="photo-user">
+            <img
+              src="../../../pictures/profile.JPG"
+              alt=""
+              class="profile-pic"
+            />
+          </div>
+        </section>
+      </section>
+
+      <!---------------------------------------------- menu - navegação ---------------------------------------------->
+      <section class="body">
+        <section class="display">
+          <div class="class-activity">
+
+            <div>
+              <p id="mainContainer"></p>
+            </div>
+
+            <script>
+                let escolhaUsuario
+                let mostrar = document.getElementById("mainContainer")
+
+
+                escolhaUsuario = window.prompt("Pedra Papel ou Tesoura?").toLowerCase()
+
+                let opcoes = ['pedra', 'papel', 'tesoura']
+                let escolhaComputador = opcoes[Math.floor(Math.random() * 3)]
+
+                 mostrar.innerHTMLL = `<h1>Você escolheu: ${escolhaUsuario}</h1>`
+                 mostrar.innerHTMLL = `<h1>Computador escolheu: ${escolhaComputador}</h1>`
+
+                if (escolhaUsuario === escolhaComputador) {
+                     mostrar.innerHTMLL = '<h1>Empate!<h1>'
+                } else if (
+                    (escolhaUsuario === 'pedra' && escolhaComputador === 'tesoura') ||
+                    (escolhaUsuario === 'papel' && escolhaComputador === 'pedra') ||
+                    (escolhaUsuario === 'tesoura' && escolhaComputador === 'papel')
+                ) {
+                     mostrar.innerHTMLL = '<h1>Você ganhou!<h1>'
+                } else {
+                     mostrar.innerHTMLL = '<h1>Você perdeu!<h1>'
+                }
+
+            </script>
+          </div>
+          <div class="next-activity-contain">
+            <!-- a partir daqui, deve haver a navegação para o proximo exercicio ate o ultimo, e por fim, o proximo tema, todos os temas possuem estas mesma estrurtura html
+ são 5 ao todo, finaliando no tema de arrays -->
+            <!-- Voltar a aula 1 -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p> Voltar Exercicio 1</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="./index.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voltar a aula 2  -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p> Voltar Exercicio 2</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="./Exer2.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voltar a aula 3 -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Voltar Exercicio 3</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="./Exer3.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voltar a aula 4  -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Voltar Exercicio 4</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../Comandos_Basicos/Exer4.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voltar a aula 5 -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Voltar Exercicio 5</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../Comandos_Basicos/Exer5.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!--Voltar a aula 6 -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p> Voltar Exercicio 6</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../Comandos_Basicos/Exer6.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voltar a aula 7 -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Voltar Exercicio 7</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../Comandos_Basicos/Exer7.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voltar a aula 8  -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Voltar Exercicio 8</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../Comandos_Basicos/Exer8.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voltar a aula 9  -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Voltar Exercicio 9</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../Comandos_Basicos/Exer9.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voltar a aula 10-->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Voltar Exercicio 10</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../../../aulas/Aula2/exercicio11.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- aula 12  -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/javascript.png" alt="" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Exercicio 12</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../Comandos_Basicos/Exer12.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- next class -->
+            <div class="container-class">
+              <div class="picture-next-activity">
+                <img src="../../../pictures/dom.png" alt="teste" />
+              </div>
+
+              <div class="container-infos">
+                <div class="info-next-class">
+                  <p>Funções e DOM</p>
+                </div>
+                <div class="button-next">
+                  <button class="next">
+                    <a href="../Funcoes_e_DOM/index.html">
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
