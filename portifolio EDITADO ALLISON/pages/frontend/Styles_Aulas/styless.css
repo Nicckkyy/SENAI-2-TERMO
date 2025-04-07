@@ -140,7 +140,7 @@
     justify-content: center;
 
     .class-activity{
-        border: 2px solid red;
+        /* border: 2px solid red; */
         width: 1270px;
         height: 85%;
         display: flex;
@@ -148,6 +148,14 @@
         align-items: center;
         margin-top: 15px;
         margin: 10px;
+        background-color: #f8f7f7;
+        border-radius: 15px;
+    }
+
+    .class-activity:hover{
+        background-color: #f8f7f7;
+        border-radius: 15px;
+        transform: scale(1.05);
     }
 
     .next-activity-contain{
@@ -164,10 +172,11 @@
         
 
         .container-class{
-            border: 3px solid yellow;
+            /* border: 3px solid yellow; */
             margin: 4px;
             display: flex;
             flex-direction: row;
+            border-radius: 15px;
             
             img{
                 width: 100%;
@@ -177,6 +186,12 @@
                 border-radius: 15px;
             }
            
+        }
+
+        .container-class:hover{
+            background-color: #f8f7f7;
+            border-radius: 15px;
+            transform: scale(1.05);
         }
 
         .picture-next-activity{

@@ -1,0 +1,24 @@
+SELECT aluno.nome, turma.nome FROM aluno
+INNER JOIN turma ON aluno.turma_id = turma.id;
+
+SELECT atividade.descricao, turma.nome, materia.nome, instrutor.nome FROM atividade
+INNER JOIN turma ON atividade.turma_id = turma.id
+INNER JOIN materia ON atividade.materia_id = materia.id
+INNER JOIN instrutor ON atividade.instrutor_id = instrutor.id;
+
+SELECT instrutor.nome, materia.nome FROM instrutor
+INNER JOIN instrutor_materia ON instrutor.id = instrutor_materia.instrutor_id
+INNER JOIN materia ON instrutor_materia.materia_id = materia.id;
+
+SELECT atividade.descricao, instrutor.nome, instrutor.especialidade FROM atividade
+INNER JOIN instrutor ON atividade.instrutor_id = instrutor.id;
+
+SELECT atividade.descricao, turma.data_inicio, turma.data_fim, materia.nome FROM atividade
+INNER JOIN turma ON atividade.turma_id = turma.id
+INNER JOIN materia ON atividade.materia_id = materia.id;
+
+SELECT aluno.nome, turma.nome, atividade.descricao, materia.nome, instrutor.nome FROM aluno
+INNER JOIN turma ON turma.id = turma.id
+INNER JOIN atividade ON atividade.id = atividade.id
+INNER JOIN materia ON materia.id = materia.id
+INNER JOIN instrutor ON  instrutor.id = instrutor.id;

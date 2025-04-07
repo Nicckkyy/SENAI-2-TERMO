@@ -52,41 +52,26 @@
             <div class="class-activity">
                 
                 <script>
-
-                    const calculadora = () => {
+                    const imprimirLetras = () => {
+                        
                         let mostrar = document.getElementById("mainContainer")
+                        let nome = window.prompt('Digite um nome:')
+                        let resultado = ''
 
-                        let a = parseFloat(window.prompt('Digite o primeiro número:'))
-                        let b = parseFloat(window.prompt('Digite o segundo número:'))
-
-                        let operacao = window.prompt('Digite a operação (+, -, *, /):')
-                        let resultado
-
-                        if (operacao === '+') {
-                            resultado = a + b
-                        } else if (operacao === '-') {
-                            resultado = a - b
-                        } else if (operacao === '*') {
-                            resultado = a * b
-                        } else if (operacao === '/') {
-                            if (b !== 0) {
-                                resultado = a / b
-                            } else {
-                                resultado = 'Erro: divisão por zero'
-                            }
-                        } else {
-                            resultado = 'Operação inválida'
+                        for (let letra of nome) {
+                            resultado += letra + '\n'
                         }
 
-                        mostrar.innerHTML = `<h1>Resultado: ${resultado}</h1>`
+                        mostrar.innerHTML = `<h1>${resultado}</h1>`
                     }
+
 
                 </script>
 
             </div>
 
             <div class="next-activity-contain">
- <!-- aula 2  -->
+ <!-- voltar a aula 1  -->
                 <div class="container-class">
                     <div class="picture-next-activity">
                         <img src="../../../pictures/dom.png" alt="">
@@ -94,11 +79,11 @@
                     
                     <div class="container-infos">
                         <div class="info-next-class">
-                            <p>Exercicio 2</p>
+                            <p>Voltar Exercicio 1</p>
                         </div>
                         <div class="button-next">
                             <button class="next">
-                                <a href="../Funcoes e DOM/Exer2.html">
+                                <a href="./index.html">
                                     <i class="bi bi-arrow-right"></i>
                                 </a>
                             </button>
@@ -106,7 +91,7 @@
                     </div>
                 </div>
 
-<!-- aula 3  -->      
+<!--voltar a aula 2  -->      
                 <div class="container-class">
                     <div class="picture-next-activity">
                         <img src="../../../pictures/dom.png" alt="">
@@ -114,11 +99,11 @@
                     
                     <div class="container-infos">
                         <div class="info-next-class">
-                            <p>Exercicio 3</p>
+                            <p>Voltar Exercicio 2</p>
                         </div>
                         <div class="button-next">
                             <button class="next">
-                                <a href="../Funcoes e DOM/Exer3.html">
+                                <a href="../Funcoes e DOM/Exer2.html">
                                     <i class="bi bi-arrow-right"></i>
                                 </a>
                             </button>

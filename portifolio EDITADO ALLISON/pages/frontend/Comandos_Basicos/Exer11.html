@@ -64,24 +64,24 @@
                 let mostrar = document.getElementById("mainContainer")
 
 
-                escolhaUsuario = window.prompt("Pedra Papel ou Tesoura?").toLowerCase()
+                escolhaUsuario = window.prompt("Pedra - 🗿 Papel - 📃 ou Tesoura - ✂?").toLowerCase()
 
-                let opcoes = ['pedra', 'papel', 'tesoura']
+                let opcoes = ['Pedra - 🗿 ', 'Papel - 📃', 'Tesoura - ✂']
                 let escolhaComputador = opcoes[Math.floor(Math.random() * 3)]
 
-                 mostrar.innerHTMLL = `<h1>Você escolheu: ${escolhaUsuario}</h1>`
-                 mostrar.innerHTMLL = `<h1>Computador escolheu: ${escolhaComputador}</h1>`
+                 mostrar.innerHTML = `<h1>Você escoheu: ${escolhaUsuario}</h1>`
+                 mostrar.innerHTML = `<h1>Computaor escolheu: ${escolhaComputador}</h1>`
 
                 if (escolhaUsuario === escolhaComputador) {
-                     mostrar.innerHTMLL = '<h1>Empate!<h1>'
+                     mostrar.innerHTML = '<h1>Empate!<h1>'
                 } else if (
-                    (escolhaUsuario === 'pedra' && escolhaComputador === 'tesoura') ||
-                    (escolhaUsuario === 'papel' && escolhaComputador === 'pedra') ||
-                    (escolhaUsuario === 'tesoura' && escolhaComputador === 'papel')
+                    (escolhaUsuario === '🗿' && escolhaComputador === '✂') ||
+                    (escolhaUsuario === '📃' && escolhaComputador === '🗿') ||
+                    (escolhaUsuario === '✂' && escolhaComputador === '📃')
                 ) {
-                     mostrar.innerHTMLL = '<h1>Você ganhou!<h1>'
+                     mostrar.innerHTML = '<h1>Você ganhou!<h1>'
                 } else {
-                     mostrar.innerHTMLL = '<h1>Você perdeu!<h1>'
+                     mostrar.innerHTML = '<h1>Você perdeu!<h1>'
                 }
 
             </script>

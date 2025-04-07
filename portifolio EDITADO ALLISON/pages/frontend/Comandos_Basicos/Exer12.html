@@ -60,8 +60,8 @@
             </div>
 
             <script>
-                let numero = parseFloat(window.prompt("Digite um número!"))
-                let mostrar = document.getElementById("mainContainer")
+              let mostrar = document.getElementById("mainContainer")
+              let numero = parseFloat(window.prompt("Digite um número!"))
 
                 if (numero < 0 || !Number.isInteger(numero)) {
                     alert('Número inválido! Por favor, digite um número inteiro positivo.')
@@ -72,7 +72,7 @@
                         fatorial *= i
                     }
                     
-                    mostrar.innerHTMLL = `<h1>Fatorial de ${numero} é: ${fatorial}</h1>`
+                    mostrar.innerHTML = `<h1>Fatorial de ${numero} é: ${fatorial}</h1>`
                 }
 
 

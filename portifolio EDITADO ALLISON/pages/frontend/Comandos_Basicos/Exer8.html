@@ -60,17 +60,18 @@
             </div>
 
             <script>
-              let ano
-              let mostrar = document.getElementById("mainContainer")
+                let ano = 0
+                let mostrar = document.getElementById("mainContainer")
 
                 ano = Number(prompt("Digite um ano para verificar se ele é bissexto:"))
 
-                if(ano % 4 == 0 &&  ano % 100 != 0 || ano % 400 == 0 ){
-                  mostrar.innerHTMLL = `<h1>O ano ${ano} é bissexto</h1>`
+                if (ano % 4 == 0 &&  ano % 100 != 0 || ano % 400 == 0 ){
+                  console.log(ano)
+                  mostrar.innerHTML = `<h1>O ano ${ano} é bissexto</h1>`
                 } else {
-                  mostrar.innerHTMLL = `<h1>O ano ${ano} não é bissexto</h1>`
+                  console.log(ano)
+                  mostrar.innerHTML = `<h1>O ano ${ano} não é bissexto</h1>`
                 }
-
 
             </script>
           </div>

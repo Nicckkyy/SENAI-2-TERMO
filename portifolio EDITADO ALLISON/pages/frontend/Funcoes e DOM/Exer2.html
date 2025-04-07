@@ -53,40 +53,22 @@
                 
                 <script>
 
-                    const calculadora = () => {
+                    const inverterString = () => {
+
                         let mostrar = document.getElementById("mainContainer")
 
-                        let a = parseFloat(window.prompt('Digite o primeiro número:'))
-                        let b = parseFloat(window.prompt('Digite o segundo número:'))
+                        let str = window.prompt('Digite uma string para inverter:')
 
-                        let operacao = window.prompt('Digite a operação (+, -, *, /):')
-                        let resultado
-
-                        if (operacao === '+') {
-                            resultado = a + b
-                        } else if (operacao === '-') {
-                            resultado = a - b
-                        } else if (operacao === '*') {
-                            resultado = a * b
-                        } else if (operacao === '/') {
-                            if (b !== 0) {
-                                resultado = a / b
-                            } else {
-                                resultado = 'Erro: divisão por zero'
-                            }
-                        } else {
-                            resultado = 'Operação inválida'
-                        }
-
-                        mostrar.innerHTML = `<h1>Resultado: ${resultado}</h1>`
+                        mostrar.innerHTML = `<h1>String invertida: ${str.split('').reverse().join('')}</h1>`
                     }
+
 
                 </script>
 
             </div>
 
             <div class="next-activity-contain">
- <!-- aula 2  -->
+ <!-- voltar a aula 1  -->
                 <div class="container-class">
                     <div class="picture-next-activity">
                         <img src="../../../pictures/dom.png" alt="">
@@ -94,11 +76,11 @@
                     
                     <div class="container-infos">
                         <div class="info-next-class">
-                            <p>Exercicio 2</p>
+                            <p>Voltar Exercicio 1</p>
                         </div>
                         <div class="button-next">
                             <button class="next">
-                                <a href="../Funcoes e DOM/Exer2.html">
+                                <a href="./index.html">
                                     <i class="bi bi-arrow-right"></i>
                                 </a>
                             </button>
@@ -106,7 +88,7 @@
                     </div>
                 </div>
 
-<!-- aula 3  -->      
+<!-- aula   -->      
                 <div class="container-class">
                     <div class="picture-next-activity">
                         <img src="../../../pictures/dom.png" alt="">
