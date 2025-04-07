@@ -172,7 +172,9 @@ li:hover {
     justify-content: center;
     
     .classroom-display:hover{
-        background-color: #dbdada;
+        background-color: #f8f7f7;
+        border-radius: 15px;
+        transform: scale(1.05);
     }
 
     .classroom-display{
@@ -220,6 +222,7 @@ li:hover {
                 height: 100%;
                 object-fit: cover;
                 display: block;
+                border-radius: 15px;
             }
         }
 

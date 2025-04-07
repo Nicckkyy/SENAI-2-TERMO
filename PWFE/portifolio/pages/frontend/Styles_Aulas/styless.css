@@ -150,7 +150,7 @@
     }
 
     .next-activity-contain{
-        border: 2px solid blue;
+        /* border: 2px solid blue; */
         width: 402px;
         height: 114%;
         margin-top: 15px;
@@ -179,7 +179,7 @@
         }
 
         .picture-next-activity{
-            border: 2px solid green;
+            /* border: 2px solid green; */
             width: 169px;
             height: 94px;
             margin: 10px;
@@ -187,7 +187,7 @@
 
 
         .container-infos{
-            border: 2px solid greenyellow;
+            /* border: 2px solid greenyellow; */
             width: 169px;
             height: 94px;
             margin: 10px;
@@ -197,12 +197,12 @@
             
 
             .info-next-class{
-                border: 2px solid;
+                /* border: 2px solid; */
                 height: 50px;
             }
 
             .button-next{
-                border: 2px solid orange;
+                /* border: 2px solid orange; */
                 display: flex;
                 justify-content: end;
 
