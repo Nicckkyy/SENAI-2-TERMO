@@ -50,19 +50,32 @@
     <section class="body">   
         <section class="display">
             <div class="class-activity">
+ 
+                <!-- <h3>3. Idades acima da média</h3> -->
+                <button onclick="calcularIdades()">Verificar Idades</button>
+                <div id="resultado3"></div>
                 
-                <div>
-                    <p id="mainContainer"></p>
-                </div>
                 <script>
+                  function calcularIdades() {
                     const idades = [];
-                    let mostrar = document.getElementById("mainContainer")
-                        for (let i = 0; i < 20; i++) {
-                            idades.push(parseInt(window.prompt(`Digite a idade da ${i + 1}ª pessoa:`)))
-                        }
-
+                    for (let i = 0; i < 20; i++) {
+                      let idade = parseInt(prompt(`Digite a idade da ${i + 1}ª pessoa:`));
+                      idades.push(idade);
+                    }
+                
+                    const media = idades.reduce((soma, idade) => soma + idade, 0) / idades.length;
+                    const acimaMedia = idades.filter(idade => idade > media);
+                
+                    const div3 = document.getElementById('resultado3');
+                    div3.innerHTML = `<p>Média das idades: <strong>${media.toFixed(2)}</strong></p>`;
+                    acimaMedia.forEach(idade => {
+                      const p = document.createElement('p');
+                      p.textContent = `Idade acima da média: ${idade}`;
+                      div3.appendChild(p);
+                    });
+                  }
                 </script>
-
+                
             </div>
 
             <div class="next-activity-contain">

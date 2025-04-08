@@ -50,19 +50,29 @@
     <section class="body">   
         <section class="display">
             <div class="class-activity">
-                
-                <div>
-                    <p id="mainContainer"></p>
-                </div>
+
+                <!-- <h3>2. Média de 8 valores</h3> -->
+                <button onclick="calcularMedia()">Calcular Média</button>
+                <div id="resultado2"></div>
+
+
                 <script>
-                    const numeros2 = [];
-                    let mostrar = document.getElementById("mainContainer")
-                        for (let i = 0; i < 8; i++) {
-                            numeros2.push(parseInt(window.prompt(`Digite o ${i + 1}º número:`)))
+                  function calcularMedia() {
+                    const numeros = [];
+                    for (let i = 0; i < 8; i++) {
+                      let valor = parseFloat(prompt(`Digite o ${i + 1}º número:`));
+                      numeros.push(valor);
                     }
-
+                
+                    const soma = numeros.reduce((total, num) => total + num, 0);
+                    const media = soma / numeros.length;
+                
+                    document.getElementById('resultado2').innerHTML = 
+                      `<p>A média aritmética é <strong>${media.toFixed(2)}</strong></p>`;
+                  }
                 </script>
-
+                
+                
             </div>
 
             <div class="next-activity-contain">

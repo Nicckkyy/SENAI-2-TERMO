@@ -51,25 +51,34 @@
         <section class="display">
             <div class="class-activity">
                 
-                <div>
-                    <p id="mainContainer"></p>
-                </div>
+                <!-- <h3>4. Números pares</h3> -->
+                <button onclick="verificarPares()">Verificar Pares</button>
+                <div id="resultado4"></div>
+                
                 <script>
-                    let mostrar = document.getElementById("mainContainer")
-                    let numeros3 = []
-
+                  function verificarPares() {
+                    const numeros = [];
                     for (let i = 0; i < 10; i++) {
-                        numeros3.push(parseInt(window.prompt(`Digite o ${i + 1}º número:`)))
+                      let valor = parseInt(prompt(`Digite o ${i + 1}º número:`));
+                      numeros.push(valor);
                     }
-                    const pares = numeros3.filter(num => num % 2 === 0)
+                
+                    const pares = numeros.filter(num => num % 2 === 0);
+                    const div4 = document.getElementById('resultado4');
+                    div4.innerHTML = '';
+                
                     if (pares.length > 0) {
-                        document.querySelector('.main_container').innerHTML = `<h1>Números pares: ${pares}</h1>`
+                      pares.forEach(par => {
+                        const p = document.createElement('p');
+                        p.textContent = `Número par: ${par}`;
+                        div4.appendChild(p);
+                      });
                     } else {
-                        document.querySelector('.main_container').innerHTML = `<h1>Todos os números são ímpares.</h1>`
+                      div4.innerHTML = `<p><strong>Todos os números são ímpares.</strong></p>`;
                     }
-                    
+                  }
                 </script>
-
+                
             </div>
 
             <div class="next-activity-contain">

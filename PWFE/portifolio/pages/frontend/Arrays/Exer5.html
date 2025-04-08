@@ -51,23 +51,27 @@
         <section class="display">
             <div class="class-activity">
                 
-                <div>
-                    <p id="mainContainer"></p>
-                </div>
+                <!-- <h3>Buscar nome no vetor</h3> -->
+                <input type="text" id="nomeBusca" placeholder="Digite um nome">
+                <button onclick="buscarNome()">Buscar</button>
+                <div id="resultado5"></div>
+                
                 <script>
-                    const nomes = [];
-                    let mostrar = document.getElementById("mainContainer")
-                        for (let i = 0; i < 10; i++) {
-                            nomes.push(window.prompt(`Digite o ${i + 1}º nome:`))
-                        }
-                        const nomeProcurado = window.prompt("Digite um nome para buscar:")
-                        const indice = nomes.indexOf(nomeProcurado)
-                        if (indice !== -1) {
-                            document.querySelector('.main_container').innerHTML = `<h1>O nome ${nomeProcurado} está na posição ${indice}.</h1>`
-                        } else {
-                            document.querySelector('.main_container').innerHTML = `<h1>Nome não encontrado!</h1>`
-                        }
+                  const nomes = ["Ana", "Bruno", "Carlos", "Daniela", "Eduardo", "Fernanda", "Gabriel", "Helena", "Igor", "Julia"];
+                
+                  function buscarNome() {
+                    const nome = document.getElementById('nomeBusca').value.trim();
+                    const div5 = document.getElementById('resultado5');
+                    const indice = nomes.indexOf(nome);
+                
+                    if (indice !== -1) {
+                      div5.innerHTML = `<p>O nome <strong>${nome}</strong> está na posição <strong>${indice}</strong>.</p>`;
+                    } else {
+                      div5.innerHTML = `<p><strong>Nome não encontrado!</strong></p>`;
+                    }
+                  }
                 </script>
+                
 
             </div>
 
