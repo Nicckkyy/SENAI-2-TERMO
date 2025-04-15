@@ -1,0 +1,25 @@
+.container {
+    position: relative;
+    width: 280px;
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container h3 {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}

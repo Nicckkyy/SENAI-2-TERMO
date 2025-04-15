@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: center; /* centraliza o conteúdo horizontalmente */
+    align-items: flex-start;
+    flex-wrap: wrap; /* quebra linha se passar do limite */
+    gap: 20px; /* espaço entre os cards */
+    padding: 20px;
+}
+
+figure {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* garante que os cards fiquem no centro */
+    gap: 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
