@@ -1,9 +1,9 @@
-import estilos from './serie.module.css';
+import { Outlet } from 'react-router-dom'; 
 
 export function Serie(){
     return(
-        <div className={estilos.container}>
-            <h2>Serie</h2>
-        </div>
+        <>
+            <Outlet />
+        </>
     );
 }

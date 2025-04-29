@@ -13,7 +13,7 @@ export function List() {
     const [SelectedMovie, setSelectedMovie] = useState(null)
 
     useEffect(() => {
-        axios.get(`${API_URL}/movie/popular?api_key=${API_KEY}&language=pt-BR`)
+        axios.get(`${API_URL}/search/movie?api_key=${API_KEY}&query=barbie&language=pt-BR`)
         .then(response => {
             console.log(response.data.results)
             setMovies(response.data.results)
