@@ -1,0 +1,74 @@
+
+---
+
+### 🔹 **Opção 1 – Tela de Boas-vindas com filtros gerais**
+
+**Objetivo:** Apresentar o projeto e permitir a seleção por ambiente, tipo de sensor ou período antes de ir ao mapa.
+
+**Componentes possíveis:**
+
+* Logo do projeto e nome do sistema (ex: “Monitor SENAI”)
+* Texto breve explicando o sistema
+* Dropdown ou checkboxes com:
+
+  * Tipo de sensor: temperatura, luminosidade, CO2, etc.
+  * Ambiente: laboratório, sala de aula, corredor...
+  * Data/Hora: últimos dados, hoje, semana passada
+* Botão: “Ver mapa interativo”
+
+**Visual:** Minimalista, moderno. Use ícones (ex: Lucide, Tabler Icons) e animações leves com Framer Motion.
+
+---
+
+### 🔹 **Opção 2 – Painel com visão geral (dashboard)**
+
+**Objetivo:** Exibir estatísticas resumidas antes de entrar no mapa.
+
+**Componentes possíveis:**
+
+* Cards com: quantidade de sensores ativos, alertas recentes, média de temperatura
+* Pequeno gráfico resumo (Recharts) com últimos dados
+* Botão: “Explorar planta interativa”
+
+**Visual:** Estilo painel administrativo (admin dashboard), com fundo claro e cards sombreados.
+
+---
+
+### 🔹 **Opção 3 – Página de seleção por categoria de ambiente**
+
+**Objetivo:** O usuário escolhe um tipo de ambiente antes de ir para o mapa (e o mapa já foca nesse ambiente).
+
+**Componentes possíveis:**
+
+* Várias "caixas" com ícones e texto:
+
+  * 🧪 Laboratórios
+  * 🏫 Salas de aula
+  * 🧯 Áreas técnicas
+  * 🧭 Corredores
+* Cada item é um botão que leva ao mapa com foco nesse tipo
+
+**Visual:** Colorido, amigável, tipo app mobile com blocos de seleção
+
+---
+
+### 🔹 **Opção 4 – Tela estilo "home institucional"**
+
+**Objetivo:** Página inicial com identidade visual da escola + botão de acesso ao sistema
+
+**Componentes possíveis:**
+
+* Banner com imagem do SENAI
+* Frase de impacto: “Monitore em tempo real os ambientes da escola”
+* Botão: “Acessar o painel de sensores”
+* Rodapé com créditos, nome do projeto, professor, etc.
+
+**Visual:** Estilo site institucional, com fontes e cores do SENAI
+
+---
+
+### 💡 Dica bônus:
+
+Você pode combinar **Opção 1 + Opção 2**: colocar filtros e mostrar um resumo (mini-dashboard) antes do botão "Ver Mapa".
+
+---
