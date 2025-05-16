@@ -6,7 +6,8 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.parsers import MultiPartParser
 from rest_framework import generics
-# from django_filters.rest_framework import DjangoFilterBackend
+from django_filters.rest_framework import DjangoFilterBackend
+from openpyxl import load_workbook
 
 class SensoresView(APIView):
     permission_classes = [IsAuthenticated]
@@ -47,7 +48,7 @@ class SensoresDetailView(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=400)
 
-    def delete(self, request, pk):
+    def delete(self, pk):
         try:
             sensor = Sensores.objects.get(pk=pk)
         except Sensores.DoesNotExist:
@@ -69,8 +70,8 @@ class HistoricoView(generics.ListCreateAPIView):
     queryset = Historico.objects.all()
     serializer_class = HistoricoSerializer
     permission_classes = [IsAuthenticated]
-    # filter_backends = [DjangoFilterBackend]
-    # filterset_fields = ['sensor', 'ambiente']
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['sensor', 'ambiente']
 
 class HistoricoDetailView(generics.RetrieveUpdateDestroyAPIView):                                                                                                               
     queryset = Historico.objects.all()
@@ -85,30 +86,30 @@ class SignUpView(generics.CreateAPIView):
 # --- import de arquivos / população do banco de dados ---
 
 
-# class UploadXLSXView(APIView):
-#     parser_classes = [MultiPartParser]
+class UploadXLSXView(APIView):
+    parser_classes = [MultiPartParser]
 
-#     def post(self, request):
-#         file_obj = request.FILES.get('file')
-#         if not file_obj:
-#             return Response({'error': 'Arquivo não enviado'}, status=400)
+    def post(self, request):
+        file_obj = request.FILES.get('file')
+        if not file_obj:
+            return Response({'error': 'Arquivo não enviado'}, status=400)
 
-#         wb = load_workbook(filename=file_obj)
-#         ws = wb.active
+        wb = load_workbook(filename=file_obj)
+        ws = wb.active
 
-#         for row in ws.iter_rows(min_row=2, values_only=True):
-#             sensor, mac_address, unidade_med, latitude, longitude, status = row
-#             try:
-#                 Sensores.objects.create(
-#                     sensor=sensor.strip(),
-#                     mac_address=mac_address.strip(),
-#                     unidade_med=unidade_med.strip(),
-#                     latitude=float(latitude),
-#                     longitude=float(longitude),
-#                     status=status.strip().lower()
-#                 )
-#             except Exception as e:
-#                 print(f"Erro ao salvar sensor: {e}")
-#                 continue
+        for row in ws.iter_rows(min_row=2, values_only=True):
+            sensor, mac_address, unidade_med, latitude, longitude, status = row
+            try:
+                Sensores.objects.create(
+                    sensor=sensor.strip(),
+                    mac_address=mac_address.strip(),
+                    unidade_med=unidade_med.strip(),
+                    latitude=float(latitude),
+                    longitude=float(longitude),
+                    status=status.strip().lower()
+                )
+            except Exception as e:
+                print(f"Erro ao salvar sensor: {e}")
+                continue
 
-#         return Response({'message': 'Sensores importados com sucesso!'})
+        return Response({'message': 'Sensores importados com sucesso!'})
