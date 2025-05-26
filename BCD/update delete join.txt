@@ -1,0 +1,12 @@
+UPDATE Livro
+JOIN Editora ON Livro.editora_id = Editora.id
+SET Livro.titulo = CONCAT('[Moderna] ', Livro.titulo)
+WHERE Editora.nome = 'Moderna';
+
+DELETE Emprestimo
+FROM Emprestimo
+JOIN Livro ON Emprestimo.livro_id = Livro.id
+WHERE Livro.titulo LIKE 'Aprendendo%';
+
+
+

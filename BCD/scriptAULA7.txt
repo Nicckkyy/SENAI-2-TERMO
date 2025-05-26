@@ -1,0 +1,51 @@
+------------ SELECT E INSERT --------------
+
+SELECT * FROM livros;
+
+INSERT INTO livros (titulo, autor, data_publicacao, genero)
+VALUES ('Python', 'Eric Matthes', '2023-04-24', 'técnico');
+
+
+---------------- UPDATE ----------------
+UPDATE usuarios
+SET email = 'teste@email.com'
+WHERE id = 1;
+
+UPDATE livros
+SET titulo = 'Curso Intensivo de Python: uma Introdução Prática e Baseada em Projetos à Programação'
+WHERE titulo = 'Python';
+
+UPDATE livros
+SET status = 'inativo'
+WHERE data_publicacao < '2000-01-01';
+
+ALTER TABLE livros ADD COLUMN status VARCHAR(20);
+
+INSERT INTO livros (titulo, autor, data_publicacao, genero, status)
+VALUES ('Dom Quixote', 'Miguel de Cervantes', '1605-01-01', 'clássico', 'inativo');
+
+
+------------ DELETE ----------------
+DELETE FROM livros
+WHERE id = 2;
+
+-- Cadastro, se necessário
+INSERT INTO usuarios (nome, email)
+VALUES ('Teste Testador', 'teste@email.com');
+
+-- Depois, remove
+DELETE FROM usuarios
+WHERE nome = 'Teste Testador';
+
+
+DELETE FROM livros
+WHERE status = 'danificado';
+
+DELETE FROM emprestimos
+WHERE data_emprestimo LIKE '2020%';
+
+
+INSERT INTO emprestimos (usuario_id, livro_id, data_emprestimo)
+VALUES (1, 1, '2020-06-15');
+
+

@@ -1,0 +1,35 @@
+SELECT a.nome AS aluno, t.nome AS turma
+FROM alunos a
+INNER JOIN turmas t ON a.turma_id = t.id;
+
+
+SELECT atv.descricao, t.nome AS turma, m.nome AS materia, i.nome AS instrutor
+FROM atividades atv
+INNER JOIN turmas t ON atv.turma_id = t.id
+INNER JOIN materias m ON atv.materia_id = m.id
+INNER JOIN instrutores i ON atv.instrutor_id = i.id;
+
+
+SELECT i.nome AS instrutor, m.nome AS materia
+FROM instrutor_materia im
+INNER JOIN instrutores i ON im.instrutor_id = i.id
+INNER JOIN materias m ON im.materia_id = m.id;
+
+
+SELECT atv.descricao, i.nome AS instrutor, i.especialidade
+FROM atividades atv
+INNER JOIN instrutores i ON atv.instrutor_id = i.id;
+
+
+SELECT atv.descricao, t.data_inicio, t.data_fim, m.nome AS materia
+FROM atividades atv
+INNER JOIN turmas t ON atv.turma_id = t.id
+INNER JOIN materias m ON atv.materia_id = m.id;
+
+
+SELECT a.nome AS aluno, t.nome AS turma, atv.descricao, m.nome AS materia, i.nome AS instrutor
+FROM alunos a
+INNER JOIN turmas t ON a.turma_id = t.id
+INNER JOIN atividades atv ON atv.turma_id = t.id
+INNER JOIN materias m ON atv.materia_id = m.id
+INNER JOIN instrutores i ON atv.instrutor_id = i.id;

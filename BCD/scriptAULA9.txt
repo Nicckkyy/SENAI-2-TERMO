@@ -1,0 +1,95 @@
+SELECT l.titulo, c.nome AS categoria
+FROM Livro l
+JOIN LivroCategoria lc ON l.id = lc.livro_id
+JOIN Categoria c ON lc.categoria_id = c.id
+WHERE c.nome = 'Mistério'
+ORDER BY l.titulo;
+
+
+SELECT titulo, isbn
+FROM Livro
+WHERE titulo LIKE 'O%';
+
+
+SELECT nome, nivel_associacao
+FROM Usuario
+WHERE data_cadastro > '2023-06-01';
+
+
+SELECT nome
+FROM Autor
+WHERE data_nascimento IS NULL;
+
+
+SELECT titulo, descricao
+FROM Livro
+WHERE descricao IS NOT NULL;
+
+
+SELECT nome, data_cadastro
+FROM Usuario
+WHERE nivel_associacao IN ('regular', 'premium');
+
+
+SELECT *
+FROM Livro
+WHERE id BETWEEN 303 AND 306;
+
+
+SELECT nome, email
+FROM Usuario
+WHERE nome NOT LIKE 'M%';
+
+
+SELECT l.titulo
+FROM Emprestimo e
+JOIN Livro l ON e.livro_id = l.id
+WHERE e.data_devolucao IS NULL;
+
+
+SELECT *
+FROM Livro
+ORDER BY id
+LIMIT 5;
+
+
+SELECT *
+FROM Livro
+ORDER BY id
+LIMIT 5 OFFSET 3;
+
+
+SELECT titulo
+FROM Livro
+WHERE titulo LIKE '_____%rry'; -- Ex: "Harry" = 5 letras antes
+
+
+SELECT *
+FROM Usuario
+WHERE nivel_associacao = 'premium'
+  AND data_cadastro > '2023-07-31';
+
+
+
+SELECT DISTINCT l.titulo
+FROM Livro l
+JOIN LivroCategoria lc ON l.id = lc.livro_id
+JOIN Categoria c ON lc.categoria_id = c.id
+WHERE c.nome IN ('Ficção', 'Mistério')
+  AND l.descricao IS NOT NULL;
+
+
+
+SELECT DISTINCT l.titulo, a.nome AS autor, c.nome AS categoria
+FROM Emprestimo e
+JOIN Livro l ON e.livro_id = l.id
+JOIN LivroCategoria lc ON l.id = lc.livro_id
+JOIN Categoria c ON lc.categoria_id = c.id
+JOIN LivroAutor la ON l.id = la.livro_id
+JOIN Autor a ON la.autor_id = a.id
+WHERE e.data_emprestimo BETWEEN '2024-01-01' AND '2024-02-29'
+  AND l.titulo LIKE 'O%'
+  AND l.descricao IS NOT NULL
+  AND c.nome IN ('Mistério', 'Ficção', 'Fantasia')
+  AND a.nome LIKE '%a%'
+ORDER BY l.titulo;

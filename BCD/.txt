@@ -1,0 +1,69 @@
+SELECT titulo, ano_publicacao
+FROM Livros
+WHERE id_editora = (
+  SELECT id FROM Editoras WHERE nome = 'Companhia das Letras'
+);
+
+
+SELECT nome
+FROM Autores
+WHERE id IN (
+  SELECT id_autor FROM Livros
+  WHERE id_editora = (
+    SELECT id FROM Editoras WHERE nome = 'Rocco'
+  )
+);
+
+
+SELECT titulo
+FROM Livros
+WHERE id IN (
+  SELECT id_livro FROM Emprestimos
+  WHERE data_devolucao IS NULL
+);
+
+
+SELECT nome
+FROM Leitores
+WHERE id IN (
+  SELECT id_leitor FROM Emprestimos
+  WHERE data_devolucao IS NULL
+);
+
+
+SELECT nome,
+  (SELECT titulo FROM Livros
+   WHERE Livros.id = (
+     SELECT id_livro FROM Emprestimos
+     WHERE Emprestimos.id_leitor = Leitores.id
+     ORDER BY data_emprestimo DESC
+     LIMIT 1)
+  ) AS ultimo_livro
+FROM Leitores;
+
+
+
+SELECT titulo,
+  (SELECT nome FROM Editoras
+   WHERE Editoras.id = Livros.id_editora
+  ) AS nome_editora
+FROM Livros;
+
+
+SELECT nome, titulo
+FROM (
+  SELECT Emprestimos.id_leitor, Emprestimos.id_livro
+  FROM Emprestimos
+  WHERE data_devolucao IS NULL
+) AS em_aberto
+JOIN Leitores ON Leitores.id = em_aberto.id_leitor
+JOIN Livros ON Livros.id = em_aberto.id_livro;
+
+
+SELECT nome
+FROM (
+  SELECT DISTINCT Livros.id_editora
+  FROM Emprestimos
+  JOIN Livros ON Emprestimos.id_livro = Livros.id
+) AS usadas
+JOIN Editoras ON Editoras.id = usadas.id_editora;

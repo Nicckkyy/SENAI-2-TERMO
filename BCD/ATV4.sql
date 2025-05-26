@@ -150,10 +150,3 @@ VALUES
 (408, 308, '2024-01-28', '2024-02-12', '2024-02-11'),
 (409, 309, '2024-02-01', '2024-02-16', '2024-02-15'),
 (410, 310, '2024-02-03', '2024-02-18', NULL);
-
-
-SELECT Livro.titulo, Categoria.nome FROM Livro
-INNER JOIN LivroCategoria ON Livro.id = LivroCategoria.livro_id
-INNER JOIN Categoria ON LivroCategoria.categoria_id = Categoria.id
-where Categoria.nome
-order by

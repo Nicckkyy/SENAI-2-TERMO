@@ -1,0 +1,92 @@
+------------------ JOINS ------------------
+
+SELECT lv.titulo, a.nome_autor
+FROM livros lv
+RIGHT JOIN autores a ON lv.id_autor = a.id_autor;
+
+
+SELECT lv.titulo, a.nome_autor
+FROM livros lv
+RIGHT JOIN autores a ON lv.id_autor = a.id_autor;
+
+
+SELECT lv.titulo, e.nome_editora
+FROM livros lv
+LEFT JOIN editoras e ON lv.id_editora = e.id_editora
+UNION
+SELECT lv.titulo, e.nome_editora
+FROM livros lv
+RIGHT JOIN editoras e ON lv.id_editora = e.id_editora;
+
+
+SELECT l.nome_leitor, lv.titulo
+FROM leitores l
+CROSS JOIN livros lv;
+
+
+SELECT nome_autor AS nome FROM autores
+UNION
+SELECT nome_editora FROM editoras;
+
+
+SELECT e.id_emprestimo, lv.titulo
+FROM emprestimos e
+LEFT JOIN livros lv ON e.id_livro = lv.id_livro;
+
+
+SELECT e.id_emprestimo, l.nome_leitor
+FROM emprestimos_leitores el
+INNER JOIN leitores l ON el.id_leitor = l.id_leitor
+INNER JOIN emprestimos e ON el.id_emprestimo = e.id_emprestimo;
+
+
+SELECT e.nome_editora, lv.titulo
+FROM editoras e
+LEFT JOIN livros lv ON e.id_editora = lv.id_editora;
+
+
+SELECT e.nome_editora, lv.titulo
+FROM editoras e
+LEFT JOIN livros lv ON e.id_editora = lv.id_editora;
+
+
+SELECT l.nome_leitor, lv.titulo
+FROM leitores l
+LEFT JOIN emprestimos_leitores el ON l.id_leitor = el.id_leitor
+LEFT JOIN emprestimos e ON el.id_emprestimo = e.id_emprestimo
+LEFT JOIN livros lv ON e.id_livro = lv.id_livro;
+
+
+SELECT a.nome_autor, lv.titulo
+FROM autores a
+LEFT JOIN livros lv ON a.id_autor = lv.id_autor;
+
+
+------------------ OUTROS JOINS ------------------
+
+SELECT p.id, c.nome, p.produto
+FROM pedidos p
+INNER JOIN clientes c ON p.cliente_id = c.id;
+
+
+SELECT c.nome, p.produto
+FROM clientes c
+LEFT JOIN pedidos p ON c.id = p.cliente_id;
+
+
+SELECT c.nome, p.produto
+FROM pedidos p
+RIGHT JOIN clientes c ON p.cliente_id = c.id;
+
+
+SELECT c.nome, pr.nome
+FROM clientes c
+CROSS JOIN produtos pr;
+
+
+SELECT nome FROM clientes
+UNION
+SELECT nome FROM fornecedores;
+
+
+
