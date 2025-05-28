@@ -19,4 +19,16 @@ urlpatterns = [
     path('signup/', SignUpView.as_view(), name='signup'), #sing up
     path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'), #jwt
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'), #auth
+
+
+    # importação de planilha xlsx
+    path('upload-sensores/', UploadXLSXSensoresView.as_view(), name='upload-sensores'),
+    path('upload-ambientes/', UploadXLSXAmbientesView.as_view(), name='upload-ambientes'),
+    path('upload-historico/', UploadXLSXHistoricoView.as_view(), name='upload-historico'),
+
+    # exportação de planilha xlsx
+    path('exportar-sensores/', ExportarXLSXSensoresView.as_view(), name='exportar-sensores'),
+    path('exportar-ambientes/', ExportarXLSXAmbientesView.as_view(), name='exportar-ambientes'),
+    path('exportar-historico/', ExportarXLSXHistoricoView.as_view(), name='exportar-historico'),
+
 ]
