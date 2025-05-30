@@ -31,4 +31,6 @@ urlpatterns = [
     path('exportar-ambientes/', ExportarXLSXAmbientesView.as_view(), name='exportar-ambientes'),
     path('exportar-historico/', ExportarXLSXHistoricoView.as_view(), name='exportar-historico'),
 
+    path('sensores-filter')
+
 ]

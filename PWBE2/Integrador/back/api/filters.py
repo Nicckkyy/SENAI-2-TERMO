@@ -1,5 +1,5 @@
 import django_filters
-from .models import Historico, Ambientes
+from .models import Historico, Ambientes, Sensores
 
 
 class HistoricoFilter(django_filters.FilterSet):
@@ -45,7 +45,7 @@ class SensoresFilter(django_filters.FilterSet):
     status = django_filters.BooleanFilter(field_name='status')
 
     class Meta:
-        model = Historico
+        model = Sensores
         fields = [
             'sensor',
             'mac_address',
