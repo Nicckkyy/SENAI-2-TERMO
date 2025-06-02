@@ -17,14 +17,14 @@ import datetime
 
 class SensoresView(ListCreateAPIView):
     queryset = Sensores.objects.all()
-    serializers = SensoresSerializer
+    serializer_class = SensoresSerializer 
     permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend]
     filterset_class = SensoresFilter
 
 class SensoresDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Sensores.objects.all()
-    serializers = SensoresSerializer
+    serializer_class = SensoresSerializer 
     permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend]
     filterset_class = SensoresFilter
@@ -269,4 +269,14 @@ class SensoresFilterView(APIView):
         return Response(serializer.data)
     
 
-        
+class AmbientesFilterView(APIView):
+    def get(self, request):
+        queryset = Ambientes.objects.all()
+        serializer = AmbientesSerializer(queryset, many=True)
+        return Response(serializer.data)
+    
+class HistoricoFilterView(APIView):
+    def get(self, request):
+        queryset = Historico.objects.all()
+        serializer = HistoricoSerializer(queryset, many=True)
+        return Response(serializer.data)
