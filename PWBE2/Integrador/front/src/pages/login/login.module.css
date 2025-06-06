@@ -1,0 +1,97 @@
+/* login.module.css */
+
+.container {
+    width: 80vw;
+    height: 80vh;
+    background-color: #d3d3d3; /* cinza claro do fundo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: Arial, sans-serif;
+  }
+  
+  .overlay {
+    background-color: #C00000; /* vermelho rosado da caixa */
+    opacity: 52%;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .inputGroup label {
+    margin-bottom: 5px;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .inputGroup input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .loginButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 0;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .footer {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    bottom: 30px;
+  }
+  
+  .socialIcon {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
