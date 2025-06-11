@@ -1,16 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginPage from './pages/login/login'; // Caminho relativo para o seu arquivo de LoginPage
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sidebar/Sidebar';
+import Home from './pages/Home/Home';
+// import './App.module.css';
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <Routes>
-        <Route index element={<LoginPage />} /> {/* Exibe a página de login na rota principal */}
-        {/* Você pode adicionar outras rotas conforme o seu projeto cresce */}
-      </Routes>
+      <div style={{ display: 'flex' }}>
+        <Sidebar />
+        <div style={{ flex: 1, padding: '1rem' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* Outras rotas futuramente */}
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
-};
+}
+
 
 export default App;
