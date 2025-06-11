@@ -1,13 +1,14 @@
 import styles from './Sidebar.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
-      <h2 className={styles.logo}>LOGO</h2>
+     <Link to="/" className={styles.logo}>LOGO</Link>
       <nav className={styles.nav}>
-        <a href="#">Sensores</a>
-        <a href="#">Ambientes</a>
-        <a href="#">Históricos</a>
+        <Link to="/sensores">Sensores</Link>
+        <Link to="/ambientes">Ambientes</Link>
+        <Link to="/historico">Histórico</Link>
       </nav>
     </aside>
   );
