@@ -1,8 +1,33 @@
 .container {
-  padding: 1rem;
+  display: flex;
+  height: 100vh; /* ocupa toda a altura da tela */
+  background-color: #f5f5f5; /* só para visualização */
 }
 
-.title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.mainContent {
+  flex: 1; /* ocupa todo espaço restante ao lado da sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente */
+  padding: 1.5rem;
+  overflow-y: auto; /* para scroll vertical se precisar */
+  background-color: #fff;
 }
+
+.chartsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 900px; /* limita largura dos cards centralizados */
+}
+
+.tableSection {
+  width: 100%;
+  max-width: 900px;
+  /* Pode adicionar padding ou estilos extras aqui */
+}
+
+/* Só para referência, ajuste cores e tamanhos conforme sua identidade visual */
