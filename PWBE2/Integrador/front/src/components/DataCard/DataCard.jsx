@@ -2,7 +2,7 @@ import styles from './DataCard.module.css';
 
 export default function DataCard({ title, headers, rows }) {
   return (
-    <div className={styles.card}>
+    <section className={styles.card}>
       <h3 className={styles.title}>{title}</h3>
       <div className={styles.tableWrapper}>
         <table className={styles.table}>
@@ -24,6 +24,6 @@ export default function DataCard({ title, headers, rows }) {
           </tbody>
         </table>
       </div>
-    </div>
+    </section>
   );
 }

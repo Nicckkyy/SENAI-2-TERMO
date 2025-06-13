@@ -10,9 +10,12 @@ const rows = [
 
 export default function Ambientes() {
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Ambientes</h2>
+    <section className={styles.container}>
+      <header>
+        <h2 className={styles.title}>Ambientes</h2>
+      </header>
       <DataCard title="Ambientes Monitorados" headers={headers} rows={rows} />
-    </div>
+    </section>
   );
 }
+

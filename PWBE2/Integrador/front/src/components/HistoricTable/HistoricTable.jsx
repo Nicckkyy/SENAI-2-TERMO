@@ -16,20 +16,20 @@ const HistoricTable = ({ filters }) => {
     return sensorMatch && ambienteMatch && dataMatch;
   });
 
-  return (
-    <div className={styles.tableWrapper}>
+ return (
+    <section className={styles.tableWrapper}>
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Sensor</th>
-            <th>Valor</th>
-            <th>Ambiente</th>
-            <th>Data</th>
+            <th scope="col">ID</th>
+            <th scope="col">Sensor</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Ambiente</th>
+            <th scope="col">Data</th>
           </tr>
         </thead>
         <tbody>
-          {filteredData.map(row => (
+          {filteredData.map((row) => (
             <tr key={row.id}>
               <td>{row.id}</td>
               <td>{row.sensor}</td>
@@ -40,7 +40,7 @@ const HistoricTable = ({ filters }) => {
           ))}
         </tbody>
       </table>
-    </div>
+    </section>
   );
 };
 

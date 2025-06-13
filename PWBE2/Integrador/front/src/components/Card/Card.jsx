@@ -3,9 +3,9 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 
 export default function Card({ title, data }) {
   return (
-    <div className={styles.card}>
+    <section className={styles.card}>
       <h3>{title}</h3>
-      <div className={styles.chart}>
+      <figure className={styles.chart}>
         <ResponsiveContainer width="100%" height={150}>
           <BarChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -15,7 +15,7 @@ export default function Card({ title, data }) {
             <Bar dataKey="value" fill="#8884d8" />
           </BarChart>
         </ResponsiveContainer>
-      </div>
-    </div>
+      </figure>
+    </section>
   );
 }

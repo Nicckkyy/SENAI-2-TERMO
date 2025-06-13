@@ -10,9 +10,11 @@ const rows = [
 
 export default function Sensores() {
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Sensores</h2>
-      <DataCard title="Lista de Sensores" headers={headers} rows={rows} />
-    </div>
+    <main className={styles.container}>
+      <h1 className={styles.title}>Sensores</h1>
+      <section>
+        <DataCard title="Lista de Sensores" headers={headers} rows={rows} />
+      </section>
+    </main>
   );
 }

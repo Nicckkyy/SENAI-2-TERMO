@@ -19,13 +19,15 @@ const alertasData = [
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <div className={styles.cards}>
+    <main className={styles.container}>
+      <section className={styles.cards}>
         <Card title="Sensores Ativos" data={sensoresData} />
         <Card title="Ambientes Monitorados" data={ambientesData} />
         <Card title="Alertas Recentes" data={alertasData} />
-      </div>
-      <MapCard />
-    </div>
+      </section>
+      <section>
+        <MapCard />
+      </section>
+    </main>
   );
 }

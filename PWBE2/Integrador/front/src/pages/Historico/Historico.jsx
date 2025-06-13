@@ -20,7 +20,7 @@ const Historico = () => {
         </section>
 
         {/* FILTROS DEPOIS */}
-        <section className={styles.chartsSection}>
+        <section className={styles.chartsSection} aria-label="Gráficos de Filtros">
           <FilterChart title="Por Sensor" filterKey="sensor" onFilterChange={handleFilterChange} />
           <FilterChart title="Por Ambiente" filterKey="ambiente" onFilterChange={handleFilterChange} />
           <FilterChart title="Por Data" filterKey="data" onFilterChange={handleFilterChange} />

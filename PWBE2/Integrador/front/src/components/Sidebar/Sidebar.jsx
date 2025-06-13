@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
@@ -6,49 +6,44 @@ const Sidebar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    setIsLoggedIn(!!token);
+  }, []);
+
   const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
     setIsLoggedIn(false);
     navigate("/login");
   };
 
   return (
     <aside className={styles.sidebar}>
-      {/* Logo no topo, linkando para a home */}
       <div className={styles.logoContainer}>
         <Link to="/" className={styles.logoLink}>
-          {/* Pode ser texto ou imagem */}
           <h1 className={styles.logoText}>MinhaLogo</h1>
         </Link>
       </div>
 
-      {/* Menu de navegação */}
       <nav className={styles.navMenu}>
         <ul>
           <li>
-            <Link to="/" className={styles.navLink}>
-              Home
-            </Link>
+            <Link to="/" className={styles.navLink}>Home</Link>
           </li>
           <li>
-            <Link to="/sensores" className={styles.navLink}>
-              Sensores
-            </Link>
+            <Link to="/sensores" className={styles.navLink}>Sensores</Link>
           </li>
           <li>
-            <Link to="/ambientes" className={styles.navLink}>
-              Ambientes
-            </Link>
+            <Link to="/ambientes" className={styles.navLink}>Ambientes</Link>
           </li>
           <li>
-            <Link to="/historico" className={styles.navLink}>
-              Históricos
-            </Link>
+            <Link to="/historico" className={styles.navLink}>Históricos</Link>
           </li>
         </ul>
       </nav>
 
-      {/* Seção login/logout */}
-      <div className={styles.authSection}>
+      <footer className={styles.authSection}>
         {isLoggedIn ? (
           <button onClick={handleLogout} className={styles.logoutButton}>
             Logout
@@ -58,7 +53,7 @@ const Sidebar = () => {
             Login
           </Link>
         )}
-      </div>
+      </footer>
     </aside>
   );
 };

@@ -12,10 +12,10 @@ L.Icon.Default.mergeOptions({
 });
 
 export default function MapView() {
-  const position = [-23.5505, -46.6333]; // São Paulo (exemplo)
+  const position = [-22.914129435430063, -47.06829564331736]; // São Paulo (exemplo)
 
   return (
-    <MapContainer center={position} zoom={13} scrollWheelZoom={false} className={styles.map}>
+    <MapContainer center={position} zoom={20} scrollWheelZoom={false} className={styles.map}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; OpenStreetMap contributors"

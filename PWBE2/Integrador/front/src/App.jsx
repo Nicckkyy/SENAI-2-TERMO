@@ -4,6 +4,8 @@ import Home from './pages/Home/Home';
 import Sensores from './pages/Sensores/Sensores';
 import Ambientes from './pages/Ambientes/Ambientes';
 import Historico from './pages/Historico/Historico';
+import Login from './pages/Login/Login'; 
+import SignUp from './pages/SignUp/SignUp';
 // import './App.module.css';
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
             <Route path="/sensores" element={<Sensores />} />
             <Route path="/ambientes" element={<Ambientes />} />
             <Route path="/historico" element={<Historico />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </div>
       </div>

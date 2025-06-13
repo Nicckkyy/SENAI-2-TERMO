@@ -7,14 +7,14 @@ const FilterChart = ({ title, filterKey, onFilterChange }) => {
   };
 
   return (
-    <div className={styles.chartCard}>
+    <section className={styles.chartCard}>
       <h3>{title}</h3>
       <div className={styles.buttons}>
         <button onClick={() => handleClick('opcao1')}>Opção 1</button>
         <button onClick={() => handleClick('opcao2')}>Opção 2</button>
         <button onClick={() => handleClick('opcao3')}>Opção 3</button>
       </div>
-    </div>
+    </section>
   );
 };
 

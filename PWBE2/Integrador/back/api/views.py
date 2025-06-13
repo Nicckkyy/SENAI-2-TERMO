@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.parsers import MultiPartParser
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, CreateAPIView
 from django_filters.rest_framework import DjangoFilterBackend
@@ -8,10 +8,10 @@ from openpyxl import load_workbook, Workbook
 from .serializers import *
 from .models import Sensores, Ambientes, Historico
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
 from .filters import *
 from django.http import HttpResponse
 import datetime
-
 
 # --- SENSORES ---
 
@@ -37,7 +37,6 @@ class AmbientesView(ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend]
     filterset_class = AmbienteFilter
-
 
 class AmbientesDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Ambientes.objects.all()
@@ -67,6 +66,22 @@ class HistoricoDetailView(RetrieveUpdateDestroyAPIView):
 class SignUpView(CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes = [AllowAny]
+
+class LoginView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            # login(session) só funciona se tiver SessionMiddleware no Django, se for API puro, melhor usar JWT ou Token
+            login(request, user)
+            return Response({'message': 'Login realizado com sucesso!'})
+        else:
+            return Response({'error': 'Credenciais inválidas'}, status=400)
 
 
 # --- IMPORTAÇÃO DE PLANILHA XLSX (SENSORES) ---
